@@ -1,4 +1,4 @@
-package com.example.farmp;
+package com.qst.crop;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
