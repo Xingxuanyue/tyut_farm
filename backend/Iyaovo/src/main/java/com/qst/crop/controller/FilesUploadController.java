@@ -3,13 +3,17 @@ package com.qst.crop.controller;
 import com.qst.crop.common.Result;
 import com.qst.crop.common.StatusCode;
 import com.qst.crop.exception.FileFormatException;
+import com.qst.crop.service.MinioService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 
 
@@ -19,6 +23,25 @@ import java.util.UUID;
 public class FilesUploadController {
     @Value("${application.upload-path}")
     private String fileDirectory;
+
+    @Autowired
+    private MinioService minioService;
+
+    @PostMapping("/upload")
+    public Result<String> upload(@RequestParam("file") MultipartFile file) {
+        try {
+            // 调用MinioService上传文件
+            String url = minioService.uploadFile(file);
+            System.out.println(url);
+            if (url == null) {
+                return new Result<String>(false, StatusCode.ERROR, "上传失败", file.getOriginalFilename());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new Result<String>(false, StatusCode.ERROR, "上传失败", file.getOriginalFilename());
+        }
+        return new Result<String>(true, StatusCode.OK, "上传成功", file.getOriginalFilename());
+    }
 
     //    头像上传
     @ApiOperation(value = "头像上传")
