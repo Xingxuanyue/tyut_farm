@@ -8,13 +8,13 @@
 
     <div class="bottom-menu-container" >
       <div class="bottom-menu-box el-icon-location">
-        地址: 山东大学软件园校区
+        地址: 太原理工大学（明向校区）
       </div>
       <div class="bottom-menu-box el-icon-phone">
-        联系电话: 13233138362
+        联系电话: 199 3590 1869
       </div>
       <div class="bottom-menu-box el-icon-s-comment">
-        邮箱: 1837879652@qq.com
+        邮箱: 1794191294@qq.com
       </div>
 
     </div>
