@@ -17,6 +17,19 @@ import PublishedNeeds from '../views/UserCenter/MyPublishedInfo/PublishedNeeds'
 import UserBuy from '../views/UserCenter/MyOrderInfo/UserBuy'
 import UserSell from '../views/UserCenter/MyOrderInfo/UserSell'
 
+import HomeKnowledge from '../views/KonwledgePage/HomeKnowledge'
+import KnowledgeDetail from '../views/KonwledgePage/KnowledgeDetail'
+import User from '../views/UserCenter/User'
+import UserInfo from '../views/UserCenter/MyInformation/UserInfo'
+import UserFinance from '../views/UserFinance'
+import UserAddress from '../views/UserCenter/MyInformation/UserAddress'
+import UserPassword from '../views/UserCenter/MyInformation/UserPassword'
+import HomeGuide from '../views/GuideSourcePage/HomeGuide'
+import guideDetail from '../views/GuideSourcePage/guideDetail'
+import AllExpert from '../views/GuideSourcePage/AllExpert'
+import question from '../views/GuideSourcePage/Question'
+import appointment from '../views/GuideSourcePage/Appointment'
+
 Vue.use(VueRouter)
 
 
@@ -55,10 +68,60 @@ const routes = [
                 path: 'purchaseDetails',
                 component: purchaseDetails,
             },
+            //dhh
+            {
+                path: 'knowledge',
+                component: HomeKnowledge
+            },
+            {
+                path: 'knowledge/:id',
+                component: KnowledgeDetail
+            },
+            {
+                path: 'guide',
+                component: HomeGuide
+            },
+            {
+                path: 'guide/:id',
+                component: guideDetail
+            },
+            {
+                path: 'allExpert',
+                component: AllExpert
+            },
+            {
+                path: 'question',
+                component: question
+            },
+
             {
                 path: 'user',
                 component: User,
                 children: [
+                    //dhh
+                    {
+                        path: '',
+                        redirect: 'userinfo'
+                    },
+                    {
+                        path: 'userfinance',
+                        component: UserFinance
+            
+                    },
+                    {
+                        path: 'userinfo',
+                        component: UserInfo
+            
+                    },
+                    {
+                        path: 'useraddress',
+                        component: UserAddress
+                    },
+                    {
+                        path: 'userpassword',
+                        component: UserPassword
+                    },
+                    
                     {
                         path: 'publishedneedsAdmin',
                         component: PublishedNeedsAdmin
