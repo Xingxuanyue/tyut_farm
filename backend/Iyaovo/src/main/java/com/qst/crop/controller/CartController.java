@@ -126,7 +126,6 @@ public class CartController {
         //取得刚才插入订单的id
         Purchase PurchaseGetId = purchaseService.selectNewPurchaseId(name);
         Integer purchaseId = PurchaseGetId.getPurchaseId();
-        String payUrl = new String();
 
         //添加购买人买入订单详细
         if (null != shoppingModelList && shoppingModelList.size() > 0){
@@ -159,8 +158,7 @@ public class CartController {
                 //删除购物车信息
                 shoppingcartService.delete(shoppingModel.getShoppingId());
             }
-            payUrl = "http://localhost:9090/alipay/pay?subject=" + "订单" + "&tradeNo=" + String.valueOf(purchaseId) + "&totalAmount=" + String.valueOf(purchase.getTotalPrice());
         }
-        return new Result(true, StatusCode.OK, "提交成功",payUrl);
+        return new Result(true, StatusCode.OK, "提交成功");
     }
 }

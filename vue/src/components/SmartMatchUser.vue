@@ -125,7 +125,7 @@
         <img
           class="goods-img"
           v-if="item.avatar != ''"
-          :src="'http://127.0.0.1:9000/file/' + '/file/' + item.avatar"
+          :src="'http://127.0.0.1:9000' + '/file/' + item.avatar"
           alt=""
         />
         <img
