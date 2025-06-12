@@ -7,7 +7,7 @@
     </div>
 
     <div class="goods" v-for="(item, index) in cgoods" :style="index===cgoods.length-1?'':'border-bottom:1px solid #f2f2f2;'" :key="index">
-      <img :src="$store.state.imgShowRoad + '/file/' + 'experta.png'" alt="" />
+      <img :src="'http://127.0.0.1:9000/file/' + '/file/' + 'experta.png'" alt="" />
       <div class="info">
         <p class="content">
           <span style="margin-right:50px;">姓名：{{item.realName}}</span>

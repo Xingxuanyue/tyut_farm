@@ -5,8 +5,8 @@
   <div class="knowledge" v-for="(item, index) in cknowledges" :key="index">
     <div class="flipper" >
       <div class="front">
-        <video class="knowledge-img" width="200px" height="160px" v-if="item.type==='mp4'||item.type==='MP4'" accept="MP4,mp4" :src="$store.state.imgShowRoad + '/file/' + item.picPath" controls autoplay/>
-        <img v-else class="knowledge-img" :src="$store.state.imgShowRoad + '/file/' + item.picPath" alt="" />
+        <video class="knowledge-img" width="200px" height="160px" v-if="item.type==='mp4'||item.type==='MP4'" accept="MP4,mp4" :src="'http://127.0.0.1:9000/file/' + '/file/' + item.picPath" controls autoplay/>
+        <img v-else class="knowledge-img" :src="'http://127.0.0.1:9000/file/' + '/file/' + item.picPath" alt="" />
         <div class="front-title">{{ item.title }}</div>
       </div>
       <div class="back">

@@ -125,7 +125,7 @@
         <img
           class="goods-img"
           v-if="item.avatar != ''"
-          :src="$store.state.imgShowRoad + '/file/' + item.avatar"
+          :src="'http://127.0.0.1:9000/file/' + '/file/' + item.avatar"
           alt=""
         />
         <img

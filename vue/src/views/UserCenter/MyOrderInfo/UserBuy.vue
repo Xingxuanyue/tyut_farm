@@ -8,7 +8,7 @@
     >
       <img
         v-if="item.picture"
-        :src="$store.state.imgShowRoad + '/file/' + item.picture"
+        :src="'http://127.0.0.1:9000/file/' + '/file/' + item.picture"
         alt=""
       />
       <img

@@ -2,7 +2,7 @@
 
 <template>
   <div class="details-box">
-    <img v-if="data.picture" :src="$store.state.imgShowRoad + '/file/' + data.picture" alt="" />
+    <img v-if="data.picture" :src="'http://127.0.0.1:9000/file/' + '/file/' + data.picture" alt="" />
     <img v-else src="../../assets/img/wutu.gif" alt="" style="border:1px solid #f2f2f2;"/>
     <div class="info">
       <h4 class="title">{{ data.title }}</h4>

@@ -14,7 +14,7 @@
       <el-table-column label="商品">
         <template slot-scope="scope">
           <div class="goods">
-            <img :src="$store.state.imgShowRoad + '/file/' + scope.row.picture" alt=""/>
+            <img :src="'http://127.0.0.1:9000/file/' + '/file/' + scope.row.picture" alt=""/>
             <div class="info">
               <h4 class="title">{{ scope.row.title }}</h4>
               <p class="content">{{ scope.row.content }}</p>

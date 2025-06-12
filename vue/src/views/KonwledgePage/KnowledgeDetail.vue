@@ -9,8 +9,8 @@
       <span>{{updateInfo.updateTime | formatTimer}}</span>
     </div>
     <div class="detail-img">
-      <video v-if="updateInfo.type==='mp4'||updateInfo.type==='MP4'" id="video" width="900" height="360" :src="$store.state.imgShowRoad + '/file/' + updateInfo.picPath" controls> </video>
-      <img v-else style="width:657px;height:300px;" :src="$store.state.imgShowRoad + '/file/' + updateInfo.picPath" alt="" />
+      <video v-if="updateInfo.type==='mp4'||updateInfo.type==='MP4'" id="video" width="900" height="360" :src="'http://127.0.0.1:9000/file/' + '/file/' + updateInfo.picPath" controls> </video>
+      <img v-else style="width:657px;height:300px;" :src="'http://127.0.0.1:9000/file/' + '/file/' + updateInfo.picPath" alt="" />
     </div>
     <div class="detail-content">
       <p>{{updateInfo.content}}</p>

@@ -21,8 +21,8 @@
 
     <div class="goods" v-for="(item, index) in cgoods"
          :key="index" @click="detailsClick(item.orderId)" :style="(index+1)%4===0?'margin-right:0':'margin-right:44px;'">
-      <img class="goods-img" v-if="item.picture!=''" :src="$store.state.imgShowRoad + '/file/' + item.picture" alt="" />
-      <img class="goods-img" v-if="item.picture==''" :src="$store.state.imgShowRoad + '/file/' + 'wutu.gif'" alt="" />
+      <img class="goods-img" v-if="item.picture!=''" :src="'http://127.0.0.1:9000/file/' + '/file/' + item.picture" alt="" />
+      <img class="goods-img" v-if="item.picture==''" :src="'http://127.0.0.1:9000/file/' + '/file/' + 'wutu.gif'" alt="" />
       <div style="text-align: right;height:250px">
         <el-tooltip
             class="box-item"
@@ -54,8 +54,8 @@
     </div>
 
 <!--    <el-card  class="goods card"  v-for="(item, index) in cgoods" :key="index" @click="" :style="(index+1)%4===0?'margin-right:0':'margin-right:25px;'" >-->
-<!--      <img class="goods-img" v-if="item.picture !== ''" :src="`${$store.state.imgShowRoad}/file/${item.picture}`" alt="" />-->
-<!--      <img class="goods-img" v-else :src="`${$store.state.imgShowRoad}/file/wutu.gif`" alt="" />-->
+<!--      <img class="goods-img" v-if="item.picture !== ''" :src="`${'http://127.0.0.1:9000/file/'}/file/${item.picture}`" alt="" />-->
+<!--      <img class="goods-img" v-else :src="`${'http://127.0.0.1:9000/file/'}/file/wutu.gif`" alt="" />-->
 
 
 <!--      <div class="info">-->

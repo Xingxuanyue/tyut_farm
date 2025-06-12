@@ -27,22 +27,6 @@ public class FilesUploadController {
     @Autowired
     private MinioService minioService;
 
-    @PostMapping("/upload")
-    public Result<String> upload(@RequestParam("file") MultipartFile file) {
-        try {
-            // 调用MinioService上传文件
-            String url = minioService.uploadFile(file);
-            System.out.println(url);
-            if (url == null) {
-                return new Result<String>(false, StatusCode.ERROR, "上传失败", file.getOriginalFilename());
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-            return new Result<String>(false, StatusCode.ERROR, "上传失败", file.getOriginalFilename());
-        }
-        return new Result<String>(true, StatusCode.OK, "上传成功", file.getOriginalFilename());
-    }
-
     //    头像上传
     @ApiOperation(value = "头像上传")
     @PostMapping("/upload/{type}")
@@ -56,22 +40,18 @@ public class FilesUploadController {
                 !tail.equals(".webp") & !tail.equals(".mp4")) {
             throw new FileFormatException("请传入正确格式文件");
         }
-//        创建目录
-        String header = UUID.randomUUID().toString().replaceAll("-", "");
-        String newFileName = header + tail;
-        String targetFileLocation = fileDirectory + File.separator + type;
-        File file1 = new File(targetFileLocation);
-        if (!file1.exists()) {
-            file1.mkdirs();
+        try {
+            // 调用MinioService上传文件
+            String url = minioService.uploadFile(file);
+            System.out.println(url);
+            if (url == null) {
+                return new Result<String>(false, StatusCode.ERROR, "上传失败", file.getOriginalFilename());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new Result<String>(false, StatusCode.ERROR, "上传失败", file.getOriginalFilename());
         }
-        //创建文件
-        String targetFileName = targetFileLocation + File.separator + newFileName;
-        File targetFile = new File(targetFileName);
-        if (!targetFile.exists()) {
-            targetFile.createNewFile();
-        }
-        file.transferTo(targetFile);
-        return new Result<String>(true, StatusCode.OK, "上传成功", newFileName);
+        return new Result<String>(true, StatusCode.OK, "上传成功", originalFilename);
     }
     //    资料上传
     @ApiOperation(value = "资料上传")

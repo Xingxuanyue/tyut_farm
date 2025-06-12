@@ -19,7 +19,7 @@
         </el-popover>
       </div>
     </div>
-    <img :src="$store.state.imgShowRoad + '/file/' + data.picture" v-show="data.picture" alt="" />
+    <img :src="'http://127.0.0.1:9000/file/' + '/file/' + data.picture" v-show="data.picture" alt="" />
     <div class="info">
       <div class="content" :title="data.content">{{ data.content }}</div>
     </div>

@@ -5,7 +5,7 @@
     </div>
     <div class="publish-content">
       <div class="message" v-for="(item, index) in userKnowledges" :key="index" :style="(index+1)%2===0?'margin-right:0':'margin-right:20px'">
-        <img v-if="item.picPath" class="knowleage-icon" :src="$store.state.imgShowRoad + '/file/' + item.picPath" alt="" />
+        <img v-if="item.picPath" class="knowleage-icon" :src="'http://127.0.0.1:9000/file/' + '/file/' + item.picPath" alt="" />
         <img class="knowleage-icon" v-else src="../assets/img/wutu.gif">
         <div class="info">
           <h4 class="title">{{ item.title }}</h4>

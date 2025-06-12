@@ -5,7 +5,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/rongxiaotong?serverTimezone=GMT%2B8&useUnicode=true&characterEncodeing=UTF-8&useSSL=false
     username: root
-    password: 153426
+    password: 123456
   jackson:
     time-zone: GMT+8
   redis:
@@ -35,6 +35,6 @@ mybatis:
 
 minio:
   endpoint: http://localhost:9000
-  access-key: iyaovo
-  secret-key: 123456789
-  bucket-name: picture
+  access-key: minioadmin
+  secret-key: minioadmin
+  bucket-name: file

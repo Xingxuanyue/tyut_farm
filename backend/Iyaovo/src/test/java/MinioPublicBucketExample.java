@@ -31,11 +31,11 @@ public class MinioPublicBucketExample {
             // 初始化MinIO客户端
             MinioClient minioClient = MinioClient.builder()
                 .endpoint("http://localhost:9000")
-                .credentials("iyaovo", "123456789")
+                .credentials("minioadmin", "minioadmin")
                 .build();
 
             // 存储桶名称
-            String bucketName = "picture";
+            String bucketName = "file";
 
             // 创建存储桶（如果不存在）
             boolean found = minioClient.bucketExists(

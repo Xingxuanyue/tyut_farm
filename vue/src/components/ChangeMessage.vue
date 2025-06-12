@@ -5,7 +5,7 @@
       <el-form label-width="100px">
         <el-form-item label="商品图片" :label-width="formLabelWidth">
           <img
-            :src="$store.state.imgShowRoad + '/file/' + cupdateGoodInfo.picture"
+            :src="'http://127.0.0.1:9000/file/' + '/file/' + cupdateGoodInfo.picture"
             alt=""
             class="order-img"/>
           <el-upload
