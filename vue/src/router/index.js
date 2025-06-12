@@ -5,6 +5,8 @@ import Login from '../views/Login'
 import Register from '../views/Register'
 import Home from '../views/Home'
 import FrontPage from '../views/FrontPage/FrontPage.vue'
+import PublishedGoodsAdmin from '../views/PublishedGoodsAdmin'
+import PublishedNeedsAdmin from '../views/PublishedNeedsAdmin'
 
 Vue.use(VueRouter)
 
@@ -31,6 +33,38 @@ const routes = [
             {
                 path: 'front',
                 component: FrontPage
+            },
+            {
+                path: 'user',
+                component: User,
+                children: [
+                    {
+                        path: 'publishedneedsAdmin',
+                        component: PublishedNeedsAdmin
+                    },
+                    // {
+                    //   path: 'publishedgoodsAdmin',
+                    //   component: PublishedGoodsAdmin
+                    // },
+                ]
+            },
+            {
+                path: 'userGood',
+                component: userGood,
+                children: [
+                    {
+                        path: 'publishedgoodsAdmin',
+                        component: PublishedGoodsAdmin
+                    },
+                    {
+                        path: 'PublishedNeedsAdmin',
+                        component: PublishedNeedsAdmin
+                    },
+                ]
+            },
+            {
+                path: 'usermanage',
+                component: UserManage
             },
         ]
     },
