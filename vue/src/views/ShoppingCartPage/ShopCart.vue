@@ -14,7 +14,7 @@
       <el-table-column label="商品">
         <template slot-scope="scope">
           <div class="goods">
-            <img :src="'http://127.0.0.1:9000/file/' + '/file/' + scope.row.picture" alt=""/>
+            <img :src="'http://127.0.0.1:9000' + '/file/' + scope.row.picture" alt=""/>
             <div class="info">
               <h4 class="title">{{ scope.row.title }}</h4>
               <p class="content">{{ scope.row.content }}</p>
@@ -47,7 +47,9 @@
       </div>
       <el-button type="danger" @click="payment" class="place-order">提交订单</el-button>
     </div>
+    <h4 v-if="isShow" class="tip">该功能未开放，请稍后再试</h4>
   </div>
+  
 </template>
 
 <script>
@@ -62,7 +64,8 @@ export default {
     return {
       dataArray: [],
       totalprice: "",
-      addressData:{}
+      addressData:{},
+      isShow: false
     };
   },
   watch:{
@@ -93,8 +96,12 @@ export default {
           .then((res) => {
             this.$store.commit("updatePaymentInfo", res);
             // 打开新页面
-            window.open(res.data);
-            this.reload();
+            // window.open(res.data);
+            // this.reload();
+            // window.open()
+            this.$router.push("/home/shopcart")
+            this.isShow = true
+            
 
           })
           .catch((err) => {
@@ -231,6 +238,12 @@ export default {
   margin: 10px auto;
   background: #fff;
   padding: 10px 20px;
+  .tip {
+    color: red;
+    position: absolute;
+    bottom: 250px;
+    right: 350px;
+  }
   .goods {
     width: 500px;
     img {
