@@ -12,11 +12,7 @@ import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-/**
- * @author QST
- * @Description 身份校验失败处理器，如 token 错误
- * @Date 2021-08-24
- */
+
 @Component
 public class EntryPointUnauthorizedHandler implements AuthenticationEntryPoint {
     @Override

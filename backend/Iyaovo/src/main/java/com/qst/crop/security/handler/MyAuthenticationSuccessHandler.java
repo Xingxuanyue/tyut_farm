@@ -16,11 +16,7 @@ import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-/**
- * @author QST
- * @Description 登录成功操作
- * @Date 2021-08-24
- */
+
 @Component
 public class MyAuthenticationSuccessHandler implements AuthenticationSuccessHandler {
     @Autowired

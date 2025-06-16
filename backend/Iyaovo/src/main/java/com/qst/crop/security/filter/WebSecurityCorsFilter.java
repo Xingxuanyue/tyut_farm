@@ -9,11 +9,7 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-/**
- * @author QST
- * @Description 解决了springSecurity跨域问题
- * @Date 2021-08-24
- */
+
 public class WebSecurityCorsFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {

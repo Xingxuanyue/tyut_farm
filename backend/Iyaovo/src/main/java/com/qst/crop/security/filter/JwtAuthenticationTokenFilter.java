@@ -19,11 +19,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-/**
- * @author QST
- * @Description 请求拦截器，根据传过来的token，进行认证
- * @Date 2021-08-24
- */
 @Component
 public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
     @Resource
